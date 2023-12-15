@@ -18,5 +18,4 @@ const MulherSchema = new mongoose.Schema({
         required: true
     }
 })
-
 module.exports = mongoose.model('diva', MulherSchema)
