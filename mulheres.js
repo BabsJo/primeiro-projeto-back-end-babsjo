@@ -7,7 +7,7 @@ const cors = require('cors') // aqui estou trazendo o pacote cors q permite cons
 const conectaBancoDeDados = require('./bancoDeDados') //aqui estou ligando ao arquivo banco de dados 
 conectaBancoDeDados() // estou chamando a função q conecta o banco de dados
 
-const Mulher = require('./mullherModel')
+const Mulher = require('./mulherModel')
 
 const app = express() //aqui estou iniciando o app
 app.use(express.json())
@@ -20,7 +20,7 @@ async function mostraMulheres(request,response) {
   try {
     const mulheresVindasDoBancoDeDados = await Mulher.find()
 
-    responde.jso(mulheresVindasDoBancoDeDados)
+    response.json(mulheresVindasDoBancoDeDados)
   }
   catch (erro){
 
